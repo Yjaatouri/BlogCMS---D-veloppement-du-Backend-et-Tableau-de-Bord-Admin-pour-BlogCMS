@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion - BlogCMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body >
+    <div class="bg-gray-100 flex items-center justify-center min-h-screen"> 
+         <div class="bg-white p-10 rounded-xl shadow-2xl w-full max-w-md">
+       <h2 class="text-3xl font-bold text-center mb-8 text-indigo-600">Connexion</h2>
+    
+      <form id="loginForm" action="api/login.php" method="POST" class="space-y-6">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required
+               class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+      
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+        <input type="password" id="password" name="password" required
+               class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+      </div>
+      
+      <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+        Se connecter
+      </button>
+      
+      <p class="text-center text-sm text-gray-600 mt-4">
+        Pas de compte ? <a href="#" class="text-indigo-600 hover:underline">S'inscrire</a>
+      </p>
+      </form>
+      </div>
+  </div>
+
+      <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-5 mt-5">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>&copy; 2025 BlogCMS. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Validation côté client simple
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (email === '' || password === '') {
+        alert('Veuillez remplir tous les champs.');
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

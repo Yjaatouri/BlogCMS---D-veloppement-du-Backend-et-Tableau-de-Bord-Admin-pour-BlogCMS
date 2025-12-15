@@ -1,12 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlogCMS - Accueil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <script src="scripte.js"></script>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header Public -->
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-indigo-600">BlogCMS</h1>
+      <div class="flex items-center space-x-6">
+        <a href="index.html" class="text-gray-700 font-medium hover:text-indigo-600">Accueil</a>
+        <a href="login.html" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium">
+          <i class="fas fa-sign-in-alt mr-2"></i>Connexion
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Bienvenue sur BlogCMS</h2>
+      <p class="text-xl opacity-90 mb-10">Découvrez des articles inspirants sur la technologie, les voyages, la cuisine et bien plus.</p>
+      
+      <!-- Barre de recherche -->
+      <div class="max-w-2xl mx-auto">
+        <form class="flex gap-2">
+          <input type="text" placeholder="Rechercher un article..." 
+                 class="flex-1 px-6 py-4 rounded-l-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+          <button type="submit" class="bg-white text-indigo-600 px-8 py-4 rounded-r-full font-semibold hover:bg-gray-100 transition">
+            <i class="fas fa-search mr-2"></i>Rechercher
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Liste des articles -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-10 text-center">Derniers articles</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Exemple d'article (répéter dynamiquement avec PHP plus tard) -->
+        <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba027e6dd8?w=800" alt="Article" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-xs text-gray-500 mb-3">
+              <span class="font-semibold text-indigo-600">Technologie</span>
+              <span class="mx-3">•</span>
+              <span>15 décembre 2025</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 hover:text-indigo-600 transition">
+              <a href="article.html">L'intelligence artificielle en 2025 : ce qui nous attend</a>
+            </h3>
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              L'IA continue de transformer tous les secteurs. Découvrez les tendances majeures qui marqueront l'année à venir...
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Par Marie Laurent</span>
+              <a href="article.html" class="text-indigo-600 font-medium hover:underline">Lire plus →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Autres articles ici -->
+        <article class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition duration-300">
+          <img src="https://images.unsplash.com/photo-1503220317375-aaadcfba80e1?w=800" alt="Article" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <div class="flex items-center text-xs text-gray-500 mb-3">
+              <span class="font-semibold text-indigo-600">Voyages</span>
+              <span class="mx-3">•</span>
+              <span>12 décembre 2025</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-3 hover:text-indigo-600 transition">
+              <a href="article.html">Les 10 destinations incontournables pour 2026</a>
+            </h3>
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              Préparez vos valises ! Voici notre sélection des endroits à ne pas manquer l'année prochaine...
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500">Par Alex Rivera</span>
+              <a href="article.html" class="text-indigo-600 font-medium hover:underline">Lire plus →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Plus d'articles... -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-16 flex justify-center space-x-3">
+        <button class="px-5 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+          <i class="fas fa-chevron-left mr-2"></i>Précédent
+        </button>
+        <button class="px-5 py-3 bg-indigo-600 text-white rounded-lg">1</button>
+        <button class="px-5 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">2</button>
+        <button class="px-5 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">3</button>
+        <button class="px-5 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+          Suivant<i class="fas fa-chevron-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-lg mb-4">BlogCMS - Votre plateforme de blogging moderne</p>
+      <p class="text-sm opacity-80">&copy; 2025 BlogCMS. Tous droits réservés.</p>
+      <div class="mt-6">
+        <a href="login.html" class="text-indigo-300 hover:text-white underline">Espace administration</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
