@@ -1,0 +1,1 @@
+<?php require_once 'functions/auth.php'; session_destroy(); redirect('index.php'); ?>
